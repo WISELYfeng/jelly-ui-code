@@ -1,5 +1,52 @@
 <template>
-    <div>
-        Switch组件   
-    </div>
+  <div>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+    <p>Switch 的文档</p>
+  </div>
 </template>
