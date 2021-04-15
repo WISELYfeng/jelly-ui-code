@@ -1,20 +1,21 @@
 <template>
     <div>
-        <button :class="{checked:checked}" @click="toggle">
+        <button :class="{checked:value}" @click="toggle">
             <span></span>
         </button>
     </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
 export default {
-    setup(){
-        const checked = ref(false)
+    props:{
+        value: Boolean
+    },
+    setup(props,context){
         const toggle = ()=>{
-            checked.value = !checked.value
+            context.emit('input', !props.value) // 接收传递值的组件不能直接修改值，要通知发送值的组件去修改
         }
-        return {checked, toggle}
+        return { toggle}
     }
 }
 </script>
