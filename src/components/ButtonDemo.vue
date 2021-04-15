@@ -3,7 +3,7 @@
     <Button>
       按钮
     </Button>
-    <Button theme="info">
+    <Button theme="info" size="big">
       按钮
     </Button>
     <Button theme="success">
