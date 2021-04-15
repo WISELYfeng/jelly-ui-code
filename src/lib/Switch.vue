@@ -13,7 +13,7 @@ export default {
     },
     setup(props,context){
         const toggle = ()=>{
-            context.emit('input', !props.value) // 接收传递值的组件不能直接修改值，要通知发送值的组件去修改
+            context.emit('update:value', !props.value) // 接收传递值的组件不能直接修改值，要通知发送值的组件去修改
         }
         return { toggle}
     }
