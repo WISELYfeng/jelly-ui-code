@@ -1,8 +1,7 @@
 <template>
-  <button class="jelly-btn" :class="classes">
-    <div>
-      <slot></slot>
-    </div>
+  <button class="jelly-btn" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="jelly-loadingIndicator"></span>
+    <slot></slot>
   </button>
 </template>
 
@@ -21,6 +20,14 @@ export default {
     level: {
       type: String,
       default: "noramal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -44,6 +51,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .jelly-btn {
   box-sizing: border-box;
   height: $h;
@@ -127,6 +135,32 @@ $red: red;
       background: darken($red, 10%);
       border-color: darken($red, 10%);
     }
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    color: $grey;
+    &:hover {
+      border-color: $grey;
+    }
+  }
+  > .jelly-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: jelly-spin 1s infinite linear;
+  }
+}
+@keyframes jelly-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
