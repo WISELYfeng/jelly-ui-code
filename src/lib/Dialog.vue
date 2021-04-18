@@ -1,11 +1,15 @@
 <template>
+<template v-if="visible">
   <div class="jelly-dialog-overlay"></div>
   <div class="jelly-dialog-wrapper">
     <div class="jelly-dialog">
-      <header>标题 <span class="jelly-dialog-close"></span></header>
+      <header>
+        标题
+        <span class="jelly-dialog-close"></span>
+      </header>
       <main>
-        <p>第一行内容</p>
-        <p>第二行内容</p>
+        <p>第一行字</p>
+        <p>第二行字</p>
       </main>
       <footer>
         <Button level="main">OK</Button>
@@ -14,6 +18,7 @@
     </div>
   </div>
 </template>
+</template>
 
 <script lang="ts">
 import Button from "./Button.vue";
@@ -21,6 +26,12 @@ export default {
   components: {
     Button,
   },
+  props:{
+    visible:{
+      type:Boolean,
+      default:false
+    }
+  }
 };
 </script>
 
