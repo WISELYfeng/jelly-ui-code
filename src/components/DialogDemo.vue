@@ -1,26 +1,37 @@
 <template>
   <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="visible"></Dialog>
+  <Dialog
+    v-model:visible="visible"
+    :closeOnClickOverlay="false"
+    :ok="f1"
+    :cancel="f2"
+  ></Dialog>
 </template>
 
 <script lang="ts">
-import Dialog from '../lib/Dialog.vue'
-import Button from '../lib/Button.vue'
-import { ref } from 'vue'
-export default {  
-  components:{
+import Dialog from "../lib/Dialog.vue";
+import Button from "../lib/Button.vue";
+import { ref } from "vue";
+export default {
+  components: {
     Dialog,
-    Button
+    Button,
   },
-  setup(){
-    const visible = ref(false)
-    const toggle = () =>{
-      visible.value = !visible.value
-    }
+  setup() {
+    const visible = ref(false);
+    const toggle = () => {
+      visible.value = !visible.value;
+    };
+    const f1 = () => {
+      return false;
+    };
+    const f2 = () => {};
     return {
       visible,
-      toggle
-    }
-  }
-}
+      toggle,
+      f1,
+      f2,
+    };
+  },
+};
 </script>
