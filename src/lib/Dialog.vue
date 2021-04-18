@@ -1,5 +1,6 @@
 <template>
   <template v-if="visible">
+    <Teleport  to="body">
     <div class="jelly-dialog-overlay" @click="onClickOverlay"></div>
     <div class="jelly-dialog-wrapper">
       <div class="jelly-dialog">
@@ -11,11 +12,12 @@
           <slot name="content" />
         </main>
         <footer>
-          <Button level="main" @click="ok">OK</Button>
+          <Button @click="ok">OK</Button>
           <Button @click="cancel">Cancel</Button>
         </footer>
       </div>
     </div>
+    </Teleport>
   </template>
 </template>
 
@@ -54,7 +56,6 @@ export default {
     const ok = () => {
       console.log(1111);
       if (props.ok?.() !== false) {
-        console.log(222);
         close();
       }
     };

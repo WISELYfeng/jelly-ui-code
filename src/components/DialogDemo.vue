@@ -1,4 +1,6 @@
 <template>
+<div style="position: relative; z-index: 1;">
+
   <Button @click="toggle">toggle</Button>
   <Dialog
     v-model:visible="visible"
@@ -14,6 +16,7 @@
     <strong>加粗的标题</strong>
   </template>
   </Dialog>
+</div>
 </template>
 
 <script lang="ts">
