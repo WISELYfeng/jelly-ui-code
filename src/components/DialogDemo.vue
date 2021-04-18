@@ -5,7 +5,15 @@
     :closeOnClickOverlay="false"
     :ok="f1"
     :cancel="f2"
-  ></Dialog>
+  >
+  <template v-slot:content>
+    <strong>hi</strong>
+    <div>hi2</div>
+  </template>
+  <template v-slot:title>
+    <strong>加粗的标题</strong>
+  </template>
+  </Dialog>
 </template>
 
 <script lang="ts">
@@ -30,7 +38,7 @@ export default {
       visible,
       toggle,
       f1,
-      f2,
+      f2
     };
   },
 };
