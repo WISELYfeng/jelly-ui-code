@@ -16,7 +16,8 @@ import {
   computed,
   ref,
   watchEffect,
-  onMounted
+  onMounted,
+  onUpdated
 } from 'vue'
 export default {
   props: {
@@ -28,10 +29,24 @@ export default {
     const selectedItem = ref < HTMLDivElement > (null)
     const indicator = ref < HTMLDivElement > (null)
     const container = ref < HTMLDivElement > (null)
-
     onMounted(() => {
-      watchEffect(() => {
-        console.log(1111)
+        watchEffect(()=>{
+            const {
+            width
+            } = selectedItem.value.getBoundingClientRect()
+            indicator.value.style.width = width + 'px'
+            const {
+            left: left1
+            } = container.value.getBoundingClientRect()
+            const {
+            left: left2
+            } = selectedItem.value.getBoundingClientRect()
+            const left = left2 - left1
+            indicator.value.style.left = left + 'px'
+        })
+    })
+
+    onUpdated(()=>{
         const {
           width
         } = selectedItem.value.getBoundingClientRect()
@@ -44,8 +59,6 @@ export default {
         } = selectedItem.value.getBoundingClientRect()
         const left = left2 - left1
         indicator.value.style.left = left + 'px'
-        console.log(indicator.value.style.left)
-      })
     })
 
     const defaults = context.slots.default()
@@ -80,28 +93,23 @@ export default {
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
-
 .jelly-tabs {
   &-nav {
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
     position: relative;
-
     &-item {
       padding: 8px 0;
       margin: 0 16px;
       cursor: pointer;
-
       &:first-child {
         margin-left: 0;
       }
-
       &.selected {
         color: $blue;
       }
     }
-
     &-indicator {
       position: absolute;
       height: 3px;
@@ -112,7 +120,6 @@ $border-color: #d9d9d9;
       transition: all 250ms;
     }
   }
-
   &-content {
     padding: 8px 0;
   }
