@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="top-wrapper">
     <Topnav></Topnav>
     <div class="banner">
-      <h1>水母UI</h1>
+      <h1>果冻UI</h1>
       <h2>一个简洁易用的UI框架</h2>
       <p class="actions">
         <a href="https://github.com/WISELYfeng/vite-web">Github</a>
@@ -24,13 +24,15 @@ export default {
 
 
 <style lang="scss" scoped>
+.top-wrapper{
+  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+}
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
   > .actions {
     padding: 8px 0;
     a {
