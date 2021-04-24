@@ -57,6 +57,14 @@ $border-radius: 4px;
 $color: #007974;
 
 .top-wrapper {
+//   background: #ee9ca7;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+//  background: #ee9ca7;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   background: linear-gradient(
     145deg,
     rgba(227, 255, 253, 1) 0%,
