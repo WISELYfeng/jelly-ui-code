@@ -10,8 +10,8 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Jelly',
-    file: 'dist/lib/Jelly.js',
+    name: 'jelly',
+    file: 'dist/lib/jelly.js',
     format: 'umd',
     plugins: [terser()]
   },
