@@ -38,13 +38,15 @@ $color: #007974;
 
 .topnav {
   color: $color;
+  box-shadow: 0 3px 3px #34a7a1;
+  background:#fffcfc;
+  z-index: 20;
+  width: 100%;
   display: flex;
-  padding: 16px;
+  padding: 0.5em 2em;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 20;
   justify-content: center;
   align-items: center;
   > .logo {
