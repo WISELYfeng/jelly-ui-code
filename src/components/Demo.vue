@@ -8,14 +8,14 @@
       <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
       <Button @click="showCode" v-else>查看代码</Button>
     </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre
-        class="language-html"
-        v-html="
-          Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')
-        "
-      />
-    </div>
+      <div class="demo-code" v-if="codeVisible" :class="{ shake: noActivated }">
+        <pre
+          class="language-html"
+          v-html="
+            Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')
+          "
+        />
+      </div>
   </div>
 </template>
 
@@ -29,6 +29,7 @@ import {
   ref
 } from 'vue';
 export default {
+ 
   components: {
     Button,
   },
@@ -39,15 +40,23 @@ export default {
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
     })
-    const showCode = () => codeVisible.value = true
-    const hideCode = () => codeVisible.value = false
+    const showCode = () => {
+      codeVisible.value = true
+      noActivated.value = true
+      }
+    const hideCode = () => { 
+      codeVisible.value = false
+      noActivated.value = false
+    }
     const codeVisible = ref(false)
+    const noActivated = ref(false)
     return {
       Prism,
       html,
       codeVisible,
       showCode,
-      hideCode
+      hideCode,
+      noActivated
     }
   },
 };
@@ -78,6 +87,21 @@ $border-color: #d9d9d9;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
     }
+  }
+}
+.shake {
+  animation: fade .5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0%;
+  }
+  50%{
+    opacity: 50%;
+  }
+  100%{
+    opacity: 1;
   }
 }
 </style>
